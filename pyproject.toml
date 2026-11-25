@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "web-api-fastapi"
+version = "0.1.0"
+description = "a github repo template for creating a web api using fastapi"
+authors = ["Khai Nguyen <1192669+khaister@users.noreply.github.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+aiosqlite = "^0.21.0"
+black = ">=24.3,<27.0"
+fastapi = ">=0.115,<1.0"
+httpx = ">=0.27,<1.0"
+pydantic = "^2.6.4"
+pydantic-settings = "^2.2.1"
+python = "^3.12"
+rich = ">=13.7.1,<15.0"
+sqlalchemy = { version = "^2.0.30", extras = ["asyncio"] }
+uvicorn = { version = ">=0.30,<1.0", extras = ["standard"] }
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+pytest-asyncio = ">=0.23,<2.0"
+
+[tool.black]
+line-length = 120
+exclude = "/common_libs/logging.py"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
